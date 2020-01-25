@@ -10,7 +10,26 @@ export default {
     return {
       chartOptions: {
         chart: {
-          id: "vuechart-example"
+          id: "ブクログ読書記録"
+        },
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            endingShape: "rounded",
+            dataLabels: {
+              position: "top"
+            }
+          }
+        },
+        dataLabels: {
+          position: "top",
+          offsetY: -20,
+          style: {
+            colors: ["#1E1E1E"]
+          }
+        },
+        tooltip: {
+          enabled: false
         },
         xaxis: {
           categories: [
@@ -27,12 +46,13 @@ export default {
             "11月",
             "12月"
           ]
-        }
+        },
+        colors: ["#4EA6CC"]
       },
       series: [
         {
-          name: "series-1",
-          data: [30, 40, 35, 50, 49, 60, 70, 91, 10, 20, 12, 13]
+          name: "冊数",
+          data: [16, 14, 68, 44, 12, 24, 7, 16, 18, 0, 7, 5]
         }
       ]
     };
