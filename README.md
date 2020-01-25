@@ -24,3 +24,7 @@ npm run lint
 ```
 npm run deploy
 ```
+
+### example page
+
+https://chart-example.firebaseapp.com
