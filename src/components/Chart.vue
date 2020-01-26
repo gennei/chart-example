@@ -1,10 +1,12 @@
 <template>
   <div>
     <apexchart width="500" type="bar" :options="chartOptions" :series="series"></apexchart>
+    <button @click="update">Update!</button>
   </div>
 </template>
 
 <script>
+const axios = require("axios");
 export default {
   data: function() {
     return {
@@ -52,10 +54,23 @@ export default {
       series: [
         {
           name: "冊数",
-          data: [16, 14, 68, 44, 12, 24, 7, 16, 18, 0, 7, 5]
+          data: []
+          // data: [16, 14, 68, 44, 12, 24, 7, 16, 18, 0, 7, 5]
         }
       ]
     };
+  },
+  methods: {
+    update: async function() {
+      const response = await axios.get("/json/statistics.json");
+
+      this.series = [
+        {
+          name: "foo",
+          data: response.data.data
+        }
+      ];
+    }
   }
 };
 </script>
