@@ -12,8 +12,13 @@ export default {
   },
   data: function() {
     return {
-      items: [1, 2]
+      items: [1, 2, 3, 4, 5, 6]
     };
   }
 };
 </script>
+<style scoped>
+.item-cells {
+  width: 650px;
+}
+</style>
